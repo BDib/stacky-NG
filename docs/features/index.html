@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="StackyNG v0.7.0 - Feature Overview &amp; System Description#StackyNG is a modernized, high-performance Win32 utility designed to declutter the Windows taskbar by grouping shortcuts into organized, hierarchical menus (“stacks”). It serves as a successor to the original Stacky project, rewritten for speed, stability, and compatibility with modern Windows 10/11 environments. View Readme
+🚀 Key Features Implemented#1. High-Performance Architecture#Asynchronous Scanning: Unlike legacy tools that freeze the UI while scanning folders, StackyNG uses a background worker thread. You see a “Loading…” menu immediately, which dynamically refreshes once the data is ready. Memory-Mapped Cache: Shortcut data and icons are stored in !stacky.cache using Win32 Memory-Mapped Files (CreateFileMapping). This allows near-instant loading on subsequent launches by mapping the file directly into the process memory space. Structural Validation: On launch, StackyNG performs a lightning-fast structural scan (names and timestamps only) and compares it against the cache. It only rebuilds expensive resources (like icons) if a change is detected. 2. Modern Visuals &amp; High DPI#WIC (Windows Imaging Component): Uses the modern WIC API for high-quality, linear scaling of icons, ensuring they look sharp regardless of the source format. High-DPI Awareness: Utilizes SHGetImageList to extract jumbo/large icons from the system, preventing the “blurry icon” syndrome common in older Win32 apps. Dark Mode Support: Deep integration with the Windows 10/11 “Immersive Dark Mode.” The application detects your system theme and applies dark-themed menus (DarkMode_Explorer) and tooltips automatically. Dynamic Tooltips: Hovering over any menu item displays a tooltip showing the target path or the shortcut’s metadata description. 3. Advanced Customization (stacky.json)#Every stack folder can contain a stacky.json file to override default behavior:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://bdib.github.io/stacky-NG/docs/features/">
+	<meta property="og:site_name" content="StackyNG Documentation">
+	<meta property="og:title" content="Features">
+	<meta property="og:description" content="StackyNG v0.7.0 - Feature Overview &amp; System Description#StackyNG is a modernized, high-performance Win32 utility designed to declutter the Windows taskbar by grouping shortcuts into organized, hierarchical menus (“stacks”). It serves as a successor to the original Stacky project, rewritten for speed, stability, and compatibility with modern Windows 10/11 environments. View Readme
+🚀 Key Features Implemented#1. High-Performance Architecture#Asynchronous Scanning: Unlike legacy tools that freeze the UI while scanning folders, StackyNG uses a background worker thread. You see a “Loading…” menu immediately, which dynamically refreshes once the data is ready. Memory-Mapped Cache: Shortcut data and icons are stored in !stacky.cache using Win32 Memory-Mapped Files (CreateFileMapping). This allows near-instant loading on subsequent launches by mapping the file directly into the process memory space. Structural Validation: On launch, StackyNG performs a lightning-fast structural scan (names and timestamps only) and compares it against the cache. It only rebuilds expensive resources (like icons) if a change is detected. 2. Modern Visuals &amp; High DPI#WIC (Windows Imaging Component): Uses the modern WIC API for high-quality, linear scaling of icons, ensuring they look sharp regardless of the source format. High-DPI Awareness: Utilizes SHGetImageList to extract jumbo/large icons from the system, preventing the “blurry icon” syndrome common in older Win32 apps. Dark Mode Support: Deep integration with the Windows 10/11 “Immersive Dark Mode.” The application detects your system theme and applies dark-themed menus (DarkMode_Explorer) and tooltips automatically. Dynamic Tooltips: Hovering over any menu item displays a tooltip showing the target path or the shortcut’s metadata description. 3. Advanced Customization (stacky.json)#Every stack folder can contain a stacky.json file to override default behavior:">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+
+
+	<meta itemprop="name" content="Features">
+	<meta itemprop="description" content="StackyNG v0.7.0 - Feature Overview &amp; System Description#StackyNG is a modernized, high-performance Win32 utility designed to declutter the Windows taskbar by grouping shortcuts into organized, hierarchical menus (“stacks”). It serves as a successor to the original Stacky project, rewritten for speed, stability, and compatibility with modern Windows 10/11 environments. View Readme
+🚀 Key Features Implemented#1. High-Performance Architecture#Asynchronous Scanning: Unlike legacy tools that freeze the UI while scanning folders, StackyNG uses a background worker thread. You see a “Loading…” menu immediately, which dynamically refreshes once the data is ready. Memory-Mapped Cache: Shortcut data and icons are stored in !stacky.cache using Win32 Memory-Mapped Files (CreateFileMapping). This allows near-instant loading on subsequent launches by mapping the file directly into the process memory space. Structural Validation: On launch, StackyNG performs a lightning-fast structural scan (names and timestamps only) and compares it against the cache. It only rebuilds expensive resources (like icons) if a change is detected. 2. Modern Visuals &amp; High DPI#WIC (Windows Imaging Component): Uses the modern WIC API for high-quality, linear scaling of icons, ensuring they look sharp regardless of the source format. High-DPI Awareness: Utilizes SHGetImageList to extract jumbo/large icons from the system, preventing the “blurry icon” syndrome common in older Win32 apps. Dark Mode Support: Deep integration with the Windows 10/11 “Immersive Dark Mode.” The application detects your system theme and applies dark-themed menus (DarkMode_Explorer) and tooltips automatically. Dynamic Tooltips: Hovering over any menu item displays a tooltip showing the target path or the shortcut’s metadata description. 3. Advanced Customization (stacky.json)#Every stack folder can contain a stacky.json file to override default behavior:">
+	<meta itemprop="wordCount" content="539">
+
+<title>Features • StackyNG Documentation</title>
+<link rel="icon" href="/stacky-NG/favicon.png" >
+<link rel="manifest" href="/stacky-NG/manifest.json">
+<link rel="canonical" href="https://bdib.github.io/stacky-NG/docs/features/">
+<link rel="stylesheet" href="/stacky-NG/book.min.afb4bfd437dd0c1971175167baaa8764177a6df6e2859dfe3c098773e8aadd8d.css" integrity="sha256-r7S/1DfdDBlxF1FnuqqHZBd6bfbihZ3&#43;PAmHc&#43;iq3Y0=" crossorigin="anonymous">
+
+
+  <script defer type="module" src="/stacky-NG/en.search.min.e8ba701b20c44857083a60fdf571e4587aa834d60c8c7d24fc5ab4d3ccb6f996.js" integrity="sha256-6LpwGyDESFcIOmD99XHkWHqoNNYMjH0k/Fq008y2&#43;ZY=" crossorigin="anonymous"></script>
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/stacky-NG/"><span>StackyNG Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/features/" class="active">
+      Features</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/tutorial/" class="">
+      Tutorial</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/build/" class="">
+      Build Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/setupstacky/" class="">
+      Setup Stacky</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/roadmap/" class="">
+      Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/notice/" class="">
+      NOTICE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/license/" class="">
+      License</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/stacky-NG/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Features</h3>
+
+  <label for="toc-control">
+    
+    <img src="/stacky-NG/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-key-features-implemented">🚀 Key Features Implemented</a>
+      <ul>
+        <li><a href="#1-high-performance-architecture">1. High-Performance Architecture</a></li>
+        <li><a href="#2-modern-visuals--high-dpi">2. Modern Visuals &amp; High DPI</a></li>
+        <li><a href="#3-advanced-customization-stackyjson">3. Advanced Customization (<code>stacky.json</code>)</a></li>
+        <li><a href="#4-robustness--system-integration">4. Robustness &amp; System Integration</a></li>
+      </ul>
+    </li>
+    <li><a href="#-project-structure-modular-v070">🛠 Project Structure (Modular v0.7.0)</a></li>
+    <li><a href="#-build-system">📦 Build System</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="stackyng-v070---feature-overview--system-description">StackyNG v0.7.0 - Feature Overview &amp; System Description<a class="anchor" href="#stackyng-v070---feature-overview--system-description">#</a></h1>
+<p><strong>StackyNG</strong> is a modernized, high-performance Win32 utility designed to declutter the Windows taskbar by grouping shortcuts into organized, hierarchical menus (&ldquo;stacks&rdquo;). It serves as a successor to the original Stacky project, rewritten for speed, stability, and compatibility with modern Windows 10/11 environments. <a href="../"><strong>View Readme</strong></a></p>
+<hr>
+<h2 id="-key-features-implemented">🚀 Key Features Implemented<a class="anchor" href="#-key-features-implemented">#</a></h2>
+<h3 id="1-high-performance-architecture">1. High-Performance Architecture<a class="anchor" href="#1-high-performance-architecture">#</a></h3>
+<ul>
+<li><strong>Asynchronous Scanning</strong>: Unlike legacy tools that freeze the UI while scanning folders, StackyNG uses a background worker thread. You see a &ldquo;Loading&hellip;&rdquo; menu immediately, which dynamically refreshes once the data is ready.</li>
+<li><strong>Memory-Mapped Cache</strong>: Shortcut data and icons are stored in <code>!stacky.cache</code> using Win32 Memory-Mapped Files (<code>CreateFileMapping</code>). This allows near-instant loading on subsequent launches by mapping the file directly into the process memory space.</li>
+<li><strong>Structural Validation</strong>: On launch, StackyNG performs a lightning-fast structural scan (names and timestamps only) and compares it against the cache. It only rebuilds expensive resources (like icons) if a change is detected.</li>
+</ul>
+<h3 id="2-modern-visuals--high-dpi">2. Modern Visuals &amp; High DPI<a class="anchor" href="#2-modern-visuals--high-dpi">#</a></h3>
+<ul>
+<li><strong>WIC (Windows Imaging Component)</strong>: Uses the modern WIC API for high-quality, linear scaling of icons, ensuring they look sharp regardless of the source format.</li>
+<li><strong>High-DPI Awareness</strong>: Utilizes <code>SHGetImageList</code> to extract jumbo/large icons from the system, preventing the &ldquo;blurry icon&rdquo; syndrome common in older Win32 apps.</li>
+<li><strong>Dark Mode Support</strong>: Deep integration with the Windows 10/11 &ldquo;Immersive Dark Mode.&rdquo; The application detects your system theme and applies dark-themed menus (<code>DarkMode_Explorer</code>) and tooltips automatically.</li>
+<li><strong>Dynamic Tooltips</strong>: Hovering over any menu item displays a tooltip showing the target path or the shortcut&rsquo;s metadata description.</li>
+</ul>
+<h3 id="3-advanced-customization-stackyjson">3. Advanced Customization (<code>stacky.json</code>)<a class="anchor" href="#3-advanced-customization-stackyjson">#</a></h3>
+<p>Every stack folder can contain a <code>stacky.json</code> file to override default behavior:</p>
+<ul>
+<li><strong>Custom Naming</strong>: Change how a shortcut appears in the menu without renaming the file on disk.</li>
+<li><strong>Icon Overrides</strong>: Support for external <code>.png</code> or <code>.ico</code> icons (including transparency).</li>
+<li><strong>Argument Injection</strong>: Pass custom command-line arguments to applications when launched from the stack.</li>
+<li><strong>Administrative Elevation</strong>: Flag specific shortcuts to always &ldquo;Run as Administrator.&rdquo;</li>
+<li><strong>Theme Override</strong>: Force &ldquo;dark&rdquo;, &ldquo;light&rdquo;, or &ldquo;auto&rdquo; themes per stack.</li>
+</ul>
+<h3 id="4-robustness--system-integration">4. Robustness &amp; System Integration<a class="anchor" href="#4-robustness--system-integration">#</a></h3>
+<ul>
+<li><strong>Real-Time Monitoring</strong>: Uses <code>ReadDirectoryChangesW</code> to watch your stack folder. If you add or remove a file while the menu is open, StackyNG detects the change and triggers an async refresh.</li>
+<li><strong>Circular Link Protection</strong>: Automatically detects and ignores circular directory junctions or symbolic links, preventing infinite recursive menu loops.</li>
+<li><strong>Single Instance Signaling</strong>: If you click a StackyNG shortcut while a menu is already open, the new process signals the existing one to refresh and reposition, then exits immediately.</li>
+<li><strong>Clean UI Logic</strong>: Implemented as a &ldquo;Tool Window&rdquo; to stay out of the Alt-Tab list and Taskbar, providing a seamless &ldquo;native&rdquo; feel.</li>
+</ul>
+<hr>
+<h2 id="-project-structure-modular-v070">🛠 Project Structure (Modular v0.7.0)<a class="anchor" href="#-project-structure-modular-v070">#</a></h2>
+<p>The code has been fully refactored into modular components for easier maintenance:</p>
+<ul>
+<li><code>App</code>: Manages the Win32 window, message loop, and menu display.</li>
+<li><code>CacheManager</code>: Handles filesystem scanning, structural comparison, and cache serialization.</li>
+<li><code>Bmp</code>: Logic for icon extraction, WIC processing, and bitmap management.</li>
+<li><code>Config</code>: A lightweight, fast parser for hierarchical <code>stacky.json</code> files.</li>
+<li><code>Util</code>: Shared Win32 helpers, logging, and memory-mapping logic.</li>
+<li><code>Logger</code>: Thread-safe audit trail for troubleshooting background operations.</li>
+</ul>
+<hr>
+<h2 id="-build-system">📦 Build System<a class="anchor" href="#-build-system">#</a></h2>
+<p>StackyNG supports multiple professional build environments:</p>
+<ul>
+<li><strong>CMake</strong>: Modern cross-platform foundation (min 3.15).</li>
+<li><strong>Visual Studio 2022</strong>: Full <code>.sln</code> and <code>.vcxproj</code> support.</li>
+<li><strong>NMake</strong>: Supplemental Makefile for command-line power users.</li>
+<li><strong>Batch</strong>: Simple <code>build.bat</code> for quick one-click compilation.</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/stacky-NG/docs/" class="flex align-center">
+        <img src="/stacky-NG/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>StackyNG v0.7.0</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/stacky-NG/docs/tutorial/" class="flex align-center">
+        <span>Tutorial</span>
+        <img src="/stacky-NG/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-key-features-implemented">🚀 Key Features Implemented</a>
+      <ul>
+        <li><a href="#1-high-performance-architecture">1. High-Performance Architecture</a></li>
+        <li><a href="#2-modern-visuals--high-dpi">2. Modern Visuals &amp; High DPI</a></li>
+        <li><a href="#3-advanced-customization-stackyjson">3. Advanced Customization (<code>stacky.json</code>)</a></li>
+        <li><a href="#4-robustness--system-integration">4. Robustness &amp; System Integration</a></li>
+      </ul>
+    </li>
+    <li><a href="#-project-structure-modular-v070">🛠 Project Structure (Modular v0.7.0)</a></li>
+    <li><a href="#-build-system">📦 Build System</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

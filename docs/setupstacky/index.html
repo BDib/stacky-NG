@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Setup_Stacky Documentation#1. Overview#Setup_Stacky is a WPF-based GUI utility designed to streamline the management of StackyNG workspaces View Readme . It replaces manual command-line configuration with an intuitive Windows interface, ensuring workspaces are structured consistently and launching them is as simple as clicking an icon.
+Key Features#Directory Orchestration: Automatically initializes new stack directories and prepares them for application shortcuts. Config Management: Generates a standard stacky.json configuration file, which serves as the “brain” for how StackyNG handles applications within that stack. Shortcut Automation: Automatically generates a properly configured Windows Desktop shortcut (.lnk) that points to your stacky.exe and passes the stack directory as an argument. 2. Technical Workflow#The application gathers user input through its WPF front-end and executes the following logic:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://bdib.github.io/stacky-NG/docs/setupstacky/">
+	<meta property="og:site_name" content="StackyNG Documentation">
+	<meta property="og:title" content="Setup Stacky">
+	<meta property="og:description" content="Setup_Stacky Documentation#1. Overview#Setup_Stacky is a WPF-based GUI utility designed to streamline the management of StackyNG workspaces View Readme . It replaces manual command-line configuration with an intuitive Windows interface, ensuring workspaces are structured consistently and launching them is as simple as clicking an icon.
+Key Features#Directory Orchestration: Automatically initializes new stack directories and prepares them for application shortcuts. Config Management: Generates a standard stacky.json configuration file, which serves as the “brain” for how StackyNG handles applications within that stack. Shortcut Automation: Automatically generates a properly configured Windows Desktop shortcut (.lnk) that points to your stacky.exe and passes the stack directory as an argument. 2. Technical Workflow#The application gathers user input through its WPF front-end and executes the following logic:">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+
+
+	<meta itemprop="name" content="Setup Stacky">
+	<meta itemprop="description" content="Setup_Stacky Documentation#1. Overview#Setup_Stacky is a WPF-based GUI utility designed to streamline the management of StackyNG workspaces View Readme . It replaces manual command-line configuration with an intuitive Windows interface, ensuring workspaces are structured consistently and launching them is as simple as clicking an icon.
+Key Features#Directory Orchestration: Automatically initializes new stack directories and prepares them for application shortcuts. Config Management: Generates a standard stacky.json configuration file, which serves as the “brain” for how StackyNG handles applications within that stack. Shortcut Automation: Automatically generates a properly configured Windows Desktop shortcut (.lnk) that points to your stacky.exe and passes the stack directory as an argument. 2. Technical Workflow#The application gathers user input through its WPF front-end and executes the following logic:">
+	<meta itemprop="wordCount" content="372">
+
+<title>Setup Stacky • StackyNG Documentation</title>
+<link rel="icon" href="/stacky-NG/favicon.png" >
+<link rel="manifest" href="/stacky-NG/manifest.json">
+<link rel="canonical" href="https://bdib.github.io/stacky-NG/docs/setupstacky/">
+<link rel="stylesheet" href="/stacky-NG/book.min.afb4bfd437dd0c1971175167baaa8764177a6df6e2859dfe3c098773e8aadd8d.css" integrity="sha256-r7S/1DfdDBlxF1FnuqqHZBd6bfbihZ3&#43;PAmHc&#43;iq3Y0=" crossorigin="anonymous">
+
+
+  <script defer type="module" src="/stacky-NG/en.search.min.e8ba701b20c44857083a60fdf571e4587aa834d60c8c7d24fc5ab4d3ccb6f996.js" integrity="sha256-6LpwGyDESFcIOmD99XHkWHqoNNYMjH0k/Fq008y2&#43;ZY=" crossorigin="anonymous"></script>
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/stacky-NG/"><span>StackyNG Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/features/" class="">
+      Features</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/tutorial/" class="">
+      Tutorial</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/build/" class="">
+      Build Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/setupstacky/" class="active">
+      Setup Stacky</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/roadmap/" class="">
+      Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/notice/" class="">
+      NOTICE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/license/" class="">
+      License</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/stacky-NG/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Setup Stacky</h3>
+
+  <label for="toc-control">
+    
+    <img src="/stacky-NG/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-overview">1. Overview</a>
+      <ul>
+        <li><a href="#key-features">Key Features</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-technical-workflow">2. Technical Workflow</a></li>
+    <li><a href="#3-build--setup-guide">3. Build &amp; Setup Guide</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#automated-environment-setup">Automated Environment Setup</a></li>
+        <li><a href="#build-instructions">Build Instructions</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="setup_stacky-documentation">Setup_Stacky Documentation<a class="anchor" href="#setup_stacky-documentation">#</a></h1>
+<h2 id="1-overview">1. Overview<a class="anchor" href="#1-overview">#</a></h2>
+<p><strong>Setup_Stacky</strong> is a WPF-based GUI utility designed to streamline the management of <strong>StackyNG</strong> workspaces <a href="../"><strong>View Readme</strong></a>
+. It replaces manual command-line configuration with an intuitive Windows interface, ensuring workspaces are structured consistently and launching them is as simple as clicking an icon.</p>
+<h3 id="key-features">Key Features<a class="anchor" href="#key-features">#</a></h3>
+<ul>
+<li><strong>Directory Orchestration</strong>: Automatically initializes new stack directories and prepares them for application shortcuts.</li>
+<li><strong>Config Management</strong>: Generates a standard <code>stacky.json</code> configuration file, which serves as the &ldquo;brain&rdquo; for how StackyNG handles applications within that stack.</li>
+<li><strong>Shortcut Automation</strong>: Automatically generates a properly configured Windows Desktop shortcut (<code>.lnk</code>) that points to your <code>stacky.exe</code> and passes the stack directory as an argument.</li>
+</ul>
+<h2 id="2-technical-workflow">2. Technical Workflow<a class="anchor" href="#2-technical-workflow">#</a></h2>
+<p>The application gathers user input through its WPF front-end and executes the following logic:</p>
+<ol>
+<li><strong>Validation</strong>: Verifies that the target workspace directory exists (or creates it) and confirms the provided <code>stacky.exe</code> path is valid.</li>
+<li><strong>JSON Generation</strong>: Creates a base <code>stacky.json</code> file inside your workspace. The &ldquo;Force&rdquo; option ensures existing configurations are updated to the current schema to prevent corruption.</li>
+<li><strong>COM Integration</strong>: Utilizes the <code>WScript.Shell</code> COM object—the same robust engine used by professional installers—to create fully compliant Windows shortcuts.</li>
+<li><strong>Parameter Mapping</strong>: Sets the shortcut <code>TargetPath</code> to <code>stacky.exe</code> and maps the <code>Arguments</code> property to your selected folder path, ensuring correct workspace initialization on launch.</li>
+</ol>
+<hr>
+<h2 id="3-build--setup-guide">3. Build &amp; Setup Guide<a class="anchor" href="#3-build--setup-guide">#</a></h2>
+<h3 id="prerequisites">Prerequisites<a class="anchor" href="#prerequisites">#</a></h3>
+<ul>
+<li><strong>OS</strong>: Windows 11.</li>
+<li><strong>SDK</strong>: .NET 10.0 SDK.</li>
+<li><strong>Compiler</strong>: Visual Studio 2026 (or 2022) with the &ldquo;Desktop development with C++&rdquo; and &ldquo;.NET desktop development&rdquo; workloads.</li>
+<li><strong>Dependencies</strong>: Windows Script Host Object Model (COM).</li>
+</ul>
+<h3 id="automated-environment-setup">Automated Environment Setup<a class="anchor" href="#automated-environment-setup">#</a></h3>
+<p>If setting up a fresh build machine, use one of the following methods:</p>
+<h4 id="using-chocolatey">Using Chocolatey<a class="anchor" href="#using-chocolatey">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Install Build Tools</span>
+</span></span><span style="display:flex;"><span>choco install visualstudio2022buildtools -y
+</span></span><span style="display:flex;"><span>choco install visualstudio2022-workload-manageddesktopbuildtools -y
+</span></span><span style="display:flex;"><span>choco install visualstudio2022-workload-nativedesktop -y</span></span></code></pre></div><h4 id="using-winget">Using Winget<a class="anchor" href="#using-winget">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Install .NET SDK 10.0</span>
+</span></span><span style="display:flex;"><span>winget install Microsoft.DotNet.SDK.10
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install Build Tools</span>
+</span></span><span style="display:flex;"><span>winget install Microsoft.VisualStudio.2022.BuildTools --override <span style="color:#e6db74">&#34;--passive --add Microsoft.VisualStudio.Workload.ManagedDesktopBuildTools&#34;</span></span></span></code></pre></div><h3 id="build-instructions">Build Instructions<a class="anchor" href="#build-instructions">#</a></h3>
+<h4 id="from-visual-studio-ide">From Visual Studio IDE<a class="anchor" href="#from-visual-studio-ide">#</a></h4>
+<ol>
+<li>Open <code>Setup_Stacky.slnx</code> in VS2026/2022.</li>
+<li>Select the <strong>Release</strong> configuration.</li>
+<li>Build the solution (<strong>Ctrl+Shift+B</strong>).</li>
+</ol>
+<h4 id="automated-via-buildps1">Automated via <code>Build.ps1</code><a class="anchor" href="#automated-via-buildps1">#</a></h4>
+<p>The project&rsquo;s orchestrator script, <code>Build.ps1</code>, automatically builds the GUI utility and deploys the necessary runtime files (<code>.exe</code>, <code>.dll</code>, <code>.deps.json</code>, and <code>.runtimeconfig.json</code>) to the <code>dist\Tools</code> directory.</p>
+<ul>
+<li><strong>Standard Build</strong>: Run <code>.\Build.ps1 -BuildTools</code> to build all project components.</li>
+<li><strong>Clean Build</strong>: Run <code>.\Build.ps1 -Clean</code> to remove all previous <code>bin</code>, <code>obj</code>, and <code>dist</code> artifacts before rebuilding.</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/stacky-NG/docs/build/" class="flex align-center">
+        <img src="/stacky-NG/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Build Guide</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/stacky-NG/docs/roadmap/" class="flex align-center">
+        <span>Roadmap</span>
+        <img src="/stacky-NG/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-overview">1. Overview</a>
+      <ul>
+        <li><a href="#key-features">Key Features</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-technical-workflow">2. Technical Workflow</a></li>
+    <li><a href="#3-build--setup-guide">3. Build &amp; Setup Guide</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#automated-environment-setup">Automated Environment Setup</a></li>
+        <li><a href="#build-instructions">Build Instructions</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

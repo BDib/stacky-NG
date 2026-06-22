@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Building StackyNG#StackyNG is designed for versatility, supporting multiple build systems to accommodate various developer environments. View Readme
+1. Supported Build Methods#Method 0: PowerShell Automation (Recommended)#This script orchestrates compilation for multiple Windows 11 target architectures and configurations automatically.
+Usage: Run from a standard PowerShell terminal (no special Native Tools prompt required).
+Build all targets: .\build.ps1
+Build specific targets: .\build.ps1 -Arch x64 -Config Release
+Clean &amp; Rebuild: .\build.ps1 -Clean
+Get Help: .\build.ps1 -h OR -Help
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://bdib.github.io/stacky-NG/docs/build/">
+	<meta property="og:site_name" content="StackyNG Documentation">
+	<meta property="og:title" content="Build Guide">
+	<meta property="og:description" content="Building StackyNG#StackyNG is designed for versatility, supporting multiple build systems to accommodate various developer environments. View Readme
+1. Supported Build Methods#Method 0: PowerShell Automation (Recommended)#This script orchestrates compilation for multiple Windows 11 target architectures and configurations automatically.
+Usage: Run from a standard PowerShell terminal (no special Native Tools prompt required).
+Build all targets: .\build.ps1
+Build specific targets: .\build.ps1 -Arch x64 -Config Release
+Clean &amp; Rebuild: .\build.ps1 -Clean
+Get Help: .\build.ps1 -h OR -Help">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+
+
+	<meta itemprop="name" content="Build Guide">
+	<meta itemprop="description" content="Building StackyNG#StackyNG is designed for versatility, supporting multiple build systems to accommodate various developer environments. View Readme
+1. Supported Build Methods#Method 0: PowerShell Automation (Recommended)#This script orchestrates compilation for multiple Windows 11 target architectures and configurations automatically.
+Usage: Run from a standard PowerShell terminal (no special Native Tools prompt required).
+Build all targets: .\build.ps1
+Build specific targets: .\build.ps1 -Arch x64 -Config Release
+Clean &amp; Rebuild: .\build.ps1 -Clean
+Get Help: .\build.ps1 -h OR -Help">
+	<meta itemprop="wordCount" content="827">
+
+<title>Build Guide • StackyNG Documentation</title>
+<link rel="icon" href="/stacky-NG/favicon.png" >
+<link rel="manifest" href="/stacky-NG/manifest.json">
+<link rel="canonical" href="https://bdib.github.io/stacky-NG/docs/build/">
+<link rel="stylesheet" href="/stacky-NG/book.min.afb4bfd437dd0c1971175167baaa8764177a6df6e2859dfe3c098773e8aadd8d.css" integrity="sha256-r7S/1DfdDBlxF1FnuqqHZBd6bfbihZ3&#43;PAmHc&#43;iq3Y0=" crossorigin="anonymous">
+
+
+  <script defer type="module" src="/stacky-NG/en.search.min.e8ba701b20c44857083a60fdf571e4587aa834d60c8c7d24fc5ab4d3ccb6f996.js" integrity="sha256-6LpwGyDESFcIOmD99XHkWHqoNNYMjH0k/Fq008y2&#43;ZY=" crossorigin="anonymous"></script>
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/stacky-NG/"><span>StackyNG Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/features/" class="">
+      Features</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/tutorial/" class="">
+      Tutorial</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/build/" class="active">
+      Build Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/setupstacky/" class="">
+      Setup Stacky</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/roadmap/" class="">
+      Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/notice/" class="">
+      NOTICE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/license/" class="">
+      License</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/stacky-NG/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Build Guide</h3>
+
+  <label for="toc-control">
+    
+    <img src="/stacky-NG/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-supported-build-methods">1. Supported Build Methods</a>
+      <ul>
+        <li><a href="#method-0-powershell-automation-recommended">Method 0: PowerShell Automation (Recommended)</a></li>
+        <li><a href="#method-1-cmake-modern">Method 1: CMake (Modern)</a></li>
+        <li><a href="#method-2-msbuild-direct">Method 2: MSBuild (Direct)</a></li>
+        <li><a href="#method-3-visual-studio-ide">Method 3: Visual Studio IDE</a></li>
+        <li><a href="#method-4-nmake-fast-cli">Method 4: NMake (Fast CLI)</a></li>
+        <li><a href="#method-5-legacy-batch-script-buildbat">Method 5: Legacy Batch Script (<code>build.bat</code>)</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-prerequisites--dependencies">2. Prerequisites &amp; Dependencies</a>
+      <ul>
+        <li><a href="#system-requirements">System Requirements</a></li>
+        <li><a href="#automated-workload-setup">Automated Workload Setup</a></li>
+        <li><a href="#required-tooling">Required Tooling</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-linked-libraries">3. Linked Libraries</a></li>
+    <li><a href="#4-gui-utility-toolsgui">4. GUI Utility (<code>Tools/GUI/</code>)</a></li>
+    <li><a href="#5-troubleshooting">5. Troubleshooting</a>
+      <ul>
+        <li><a href="#1-unblock-the-file-most-likely-fix">1. Unblock the file (Most likely fix)</a></li>
+        <li><a href="#2-force-the-execution-policy-in-the-current-session">2. Force the Execution Policy in the current session</a></li>
+        <li><a href="#3-verify-encoding-if-it-still-fails">3. Verify Encoding (If it still fails)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="building-stackyng">Building StackyNG<a class="anchor" href="#building-stackyng">#</a></h1>
+<p>StackyNG is designed for versatility, supporting multiple build systems to accommodate various developer environments.
+<a href="../"><strong>View Readme</strong></a></p>
+<h2 id="1-supported-build-methods">1. Supported Build Methods<a class="anchor" href="#1-supported-build-methods">#</a></h2>
+<h3 id="method-0-powershell-automation-recommended">Method 0: PowerShell Automation (Recommended)<a class="anchor" href="#method-0-powershell-automation-recommended">#</a></h3>
+<p>This script orchestrates compilation for multiple Windows 11 target architectures and configurations automatically.</p>
+<ul>
+<li>
+<p><strong>Usage</strong>: Run from a standard PowerShell terminal (no special Native Tools prompt required).</p>
+</li>
+<li>
+<p><strong>Build all targets</strong>: <code>.\build.ps1</code></p>
+</li>
+<li>
+<p><strong>Build specific targets</strong>: <code>.\build.ps1 -Arch x64 -Config Release</code></p>
+</li>
+<li>
+<p><strong>Clean &amp; Rebuild</strong>: <code>.\build.ps1 -Clean</code></p>
+</li>
+<li>
+<p><strong>Get Help</strong>: <code>.\build.ps1 -h OR -Help</code></p>
+</li>
+<li>
+<p><strong>Parameters</strong>:</p>
+</li>
+<li>
+<p><code>-Method</code>: <code>CMake</code> or <code>Ninja</code>.</p>
+</li>
+<li>
+<p><code>-Arch</code>: <code>x64</code>, <code>x86</code>, or <code>arm64</code>.</p>
+</li>
+<li>
+<p><code>-Config</code>: <code>Release</code> or <code>Debug</code>.</p>
+</li>
+<li>
+<p><code>-BuildTools</code>: Builds the Tools, see <a href="../setupstacky/"><strong>setup stacky</strong></a>.</p>
+</li>
+<li>
+<p><code>-Clean</code>: Wipe previous build artifacts. <strong>Note</strong> : -Clean removes .vs folders  in the project, <em><strong>Visual Studio</strong></em> often keeps the <code>.vs</code> folder locked until you fully close the IDE. If you get an &ldquo;Access Denied&rdquo; error during cleanup, it just means you have the project open in Visual Studio. Ensure your IDE is closed before running the <code>-Clean</code> command to guarantee all files (like <code>.suo</code> and <code>.db</code> database files) are successfully purged.</p>
+</li>
+</ul>
+<h3 id="method-1-cmake-modern">Method 1: CMake (Modern)<a class="anchor" href="#method-1-cmake-modern">#</a></h3>
+<ol>
+<li>Open a <strong>Developer Command Prompt</strong>.</li>
+<li>Create/Navigate: <code>mkdir build &amp;&amp; cd build</code>.</li>
+<li>Configure: <code>cmake .. -G &quot;Visual Studio 17 2022&quot; -A x64</code> (Replace <code>x64</code> with <code>Win32</code> or <code>ARM64</code>).</li>
+<li>Build: <code>cmake --build . --config Release</code>.</li>
+<li>Binary location: <code>build/bin/[arch]/stacky.exe</code>.</li>
+</ol>
+<h3 id="method-2-msbuild-direct">Method 2: MSBuild (Direct)<a class="anchor" href="#method-2-msbuild-direct">#</a></h3>
+<ol>
+<li>Open a <strong>Developer Command Prompt</strong>.</li>
+<li>Run: <code>msbuild vsproj\stacky.sln /p:Configuration=Release /p:Platform=x64</code> (Use <code>Platform=Win32</code> for 32-bit).</li>
+</ol>
+<h3 id="method-3-visual-studio-ide">Method 3: Visual Studio IDE<a class="anchor" href="#method-3-visual-studio-ide">#</a></h3>
+<ol>
+<li>Open <code>vsproj/stacky.sln</code> in <strong>Visual Studio 2022</strong> (or 2026).</li>
+<li>Set configuration to <strong>Release</strong> and target architecture (x64/x86/ARM64).</li>
+<li>Right-click <strong>StackyNG</strong> project &gt; <strong>Build</strong>.</li>
+</ol>
+<h3 id="method-4-nmake-fast-cli">Method 4: NMake (Fast CLI)<a class="anchor" href="#method-4-nmake-fast-cli">#</a></h3>
+<p>For developers who prefer a lightweight command-line build without CMake, use the <code>Makefile</code> located in the <code>vsproj/</code> directory.</p>
+<p><strong>Requirements</strong>:</p>
+<ul>
+<li>Open the <strong>Developer Command Prompt for VS 2026/2022</strong>.</li>
+<li>Navigate to the <code>vsproj/</code> folder: <code>cd vsproj</code>.</li>
+</ul>
+<p><strong>Usage</strong>:
+You must specify both <code>ARCH</code> and <code>CONFIG</code> to ensure your binaries are placed in the correct isolated subdirectories:</p>
+<table>
+	<thead>
+			<tr>
+					<th>Target</th>
+					<th>Command</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>x64 Debug</strong></td>
+					<td><code>nmake ARCH=x64 CONFIG=Debug</code></td>
+			</tr>
+			<tr>
+					<td><strong>x64 Release</strong></td>
+					<td><code>nmake ARCH=x64 CONFIG=Release</code></td>
+			</tr>
+			<tr>
+					<td><strong>x86 Debug</strong></td>
+					<td><code>nmake ARCH=x86 CONFIG=Debug</code></td>
+			</tr>
+			<tr>
+					<td><strong>ARM64 Release</strong></td>
+					<td><code>nmake ARCH=arm64 CONFIG=Release</code></td>
+			</tr>
+	</tbody>
+</table>
+<p><em>Note: For <code>ARM64</code> targets, ensure you have the &ldquo;MSVC v143 - VS 2022 C++ ARM64 build tools&rdquo; workload installed via the Visual Studio Installer, and ensure you are using the &ldquo;ARM64 Native Tools Command Prompt&rdquo;.</em></p>
+<p><strong>Cleaning Artifacts</strong>:
+To wipe all generated objects and binaries across all architectures:
+<code>nmake clean</code></p>
+<h3 id="method-5-legacy-batch-script-buildbat">Method 5: Legacy Batch Script (<code>build.bat</code>)<a class="anchor" href="#method-5-legacy-batch-script-buildbat">#</a></h3>
+<ol>
+<li>Open any <strong>Developer Command Prompt</strong>.</li>
+<li>Run: <code>build.bat</code> (Automatically detects architecture and outputs to <code>bin/[arch]/stacky.exe</code>).</li>
+</ol>
+<hr>
+<h2 id="2-prerequisites--dependencies">2. Prerequisites &amp; Dependencies<a class="anchor" href="#2-prerequisites--dependencies">#</a></h2>
+<h3 id="system-requirements">System Requirements<a class="anchor" href="#system-requirements">#</a></h3>
+<ul>
+<li><strong>OS</strong>: Windows 11 (x64/ARM64).</li>
+<li><strong>Compiler</strong>: Microsoft Visual C++ (MSVC) with C++17 support.</li>
+<li><strong>SDK</strong>: Windows SDK 10.0 or 11.0.</li>
+<li><strong>Tools</strong>: Visual Studio 2022 (recommended) or 2026.</li>
+</ul>
+<h3 id="automated-workload-setup">Automated Workload Setup<a class="anchor" href="#automated-workload-setup">#</a></h3>
+<p>StackyNG requires the <strong>&ldquo;Desktop development with C++&rdquo;</strong> workload.</p>
+<h4 id="option-1-chocolatey">Option 1: Chocolatey<a class="anchor" href="#option-1-chocolatey">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Build Tools (headless)</span>
+</span></span><span style="display:flex;"><span>choco install visualstudio2022buildtools -y
+</span></span><span style="display:flex;"><span>choco install visualstudio2022-workload-vctools -y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Full IDE &amp; Native Desktop</span>
+</span></span><span style="display:flex;"><span>choco install visualstudio2022-workload-nativedesktop -y</span></span></code></pre></div><h4 id="option-2-winget-recommended">Option 2: Winget (Recommended)<a class="anchor" href="#option-2-winget-recommended">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Build Tools</span>
+</span></span><span style="display:flex;"><span>winget install Microsoft.VisualStudio.2022.BuildTools --override <span style="color:#e6db74">&#34;--passive --add Microsoft.VisualStudio.Workload.VCTools&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Full IDE</span>
+</span></span><span style="display:flex;"><span>winget install Microsoft.VisualStudio.2022.Community --override <span style="color:#e6db74">&#34;--passive --add Microsoft.VisualStudio.Workload.NativeDesktop&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Architecture Support</span>
+</span></span><span style="display:flex;"><span>winget install Microsoft.VisualStudio.2022.Community --override <span style="color:#e6db74">&#34;--passive --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.VisualStudio.Component.VC.Tools.ARM64&#34;</span></span></span></code></pre></div><h3 id="required-tooling">Required Tooling<a class="anchor" href="#required-tooling">#</a></h3>
+<ul>
+<li><strong>CMake</strong>: <code>choco install cmake</code> OR <code>winget install Kitware.CMake</code></li>
+<li><strong>Ninja (Optional)</strong>: <code>choco install ninja</code> OR <code>winget install Ninja-build.Ninja</code></li>
+</ul>
+<p><em>Note: Restart your terminal or open a <strong>Developer Command Prompt</strong> after installation to refresh environment variables.</em></p>
+<hr>
+<h2 id="3-linked-libraries">3. Linked Libraries<a class="anchor" href="#3-linked-libraries">#</a></h2>
+<ul>
+<li><strong>Core Win32</strong>: <code>user32.lib</code>, <code>gdi32.lib</code>, <code>shell32.lib</code>, <code>ole32.lib</code></li>
+<li><strong>UI/Controls</strong>: <code>comctl32.lib</code>, <code>windowscodecs.lib</code> (WIC), <code>uxtheme.lib</code>, <code>dwmapi.lib</code></li>
+<li><strong>System</strong>: <code>advapi32.lib</code></li>
+</ul>
+<hr>
+<h2 id="4-gui-utility-toolsgui">4. GUI Utility (<code>Tools/GUI/</code>)<a class="anchor" href="#4-gui-utility-toolsgui">#</a></h2>
+<p>The <strong>Setup_Stacky</strong> GUI is a subproject of the repository, compiled automatically as part of the <code>build.ps1</code> workflow.</p>
+<ul>
+<li><strong>Manual Build</strong>: Navigate to <code>Tools/GUI/</code> and run: <code>dotnet build -c Debug</code>.</li>
+<li><strong>Output Location</strong>: Automatically moved to <code>/dist/Tools/Setup_Stacky.exe</code> during the main build process.</li>
+<li><strong>Dependencies</strong>: Requires <strong>.NET 10.0 SDK</strong>. If building on a fresh machine, run <code>winget install Microsoft.DotNet.SDK.10</code>.</li>
+</ul>
+<p><strong><a href="../setupstacky">Setup Stacky UI Tool Documentation</a></strong></p>
+<hr>
+<h2 id="5-troubleshooting">5. Troubleshooting<a class="anchor" href="#5-troubleshooting">#</a></h2>
+<ul>
+<li><strong>Unresolved Externals</strong>: Ensure you are building from a <strong>Developer Command Prompt</strong>.</li>
+<li><strong>Multiple Definition Errors</strong>: Ensure compiler is set to C++17 mode (<code>/std:c++17</code>).</li>
+<li><strong>Missing Icons</strong>: Ensure <code>src/stacky.rc</code> is compiled and linked.</li>
+<li><strong>Workload Components</strong>: <code>Microsoft.VisualStudio.Workload.VCTools</code> provides essential compiler/linker tools; <code>Microsoft.VisualStudio.Workload.NativeDesktop</code> includes full SDK support.</li>
+</ul>
+<p>build.ps1 fails to run due to being unsigned, Execution Policy or is blocked.</p>
+<h3 id="1-unblock-the-file-most-likely-fix">1. Unblock the file (Most likely fix)<a class="anchor" href="#1-unblock-the-file-most-likely-fix">#</a></h3>
+<p>Even with <code>RemoteSigned</code> set, Windows often &ldquo;blocks&rdquo; files downloaded from the internet or created on other systems.</p>
+<ol>
+<li>Right-click <code>Build.ps1</code> in File Explorer.</li>
+<li>Select <strong>Properties</strong>.</li>
+<li>At the bottom of the <strong>General</strong> tab, check the box that says <strong>&ldquo;Unblock&rdquo;</strong>.</li>
+<li>Click <strong>Apply</strong> and <strong>OK</strong>.</li>
+</ol>
+<h3 id="2-force-the-execution-policy-in-the-current-session">2. Force the Execution Policy in the current session<a class="anchor" href="#2-force-the-execution-policy-in-the-current-session">#</a></h3>
+<p>Sometimes the <code>CurrentUser</code> scope isn&rsquo;t prioritized correctly. Try setting it specifically for this process window:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope <span style="color:#66d9ef">Process</span></span></span></code></pre></div><p>Then try running <code>.\Build.ps1</code> again in the <strong>same terminal window</strong>.</p>
+<h3 id="3-verify-encoding-if-it-still-fails">3. Verify Encoding (If it still fails)<a class="anchor" href="#3-verify-encoding-if-it-still-fails">#</a></h3>
+<p>If you recently edited the file in an external editor, it might have saved with an encoding (like UTF-16 with BOM) that PowerShell dislikes.</p>
+<ol>
+<li>Open <code>Build.ps1</code> in <strong>VS Code</strong>.</li>
+<li>Look at the bottom right status bar; it should say <strong>UTF-8</strong>.</li>
+<li>If it says anything else, click it, select <strong>&ldquo;Save with encoding&rdquo;</strong>, and choose <strong>&ldquo;UTF-8&rdquo;</strong>.</li>
+<li>Save the file and try again.</li>
+</ol>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/stacky-NG/docs/tutorial/" class="flex align-center">
+        <img src="/stacky-NG/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Tutorial</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/stacky-NG/docs/setupstacky/" class="flex align-center">
+        <span>Setup Stacky</span>
+        <img src="/stacky-NG/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-supported-build-methods">1. Supported Build Methods</a>
+      <ul>
+        <li><a href="#method-0-powershell-automation-recommended">Method 0: PowerShell Automation (Recommended)</a></li>
+        <li><a href="#method-1-cmake-modern">Method 1: CMake (Modern)</a></li>
+        <li><a href="#method-2-msbuild-direct">Method 2: MSBuild (Direct)</a></li>
+        <li><a href="#method-3-visual-studio-ide">Method 3: Visual Studio IDE</a></li>
+        <li><a href="#method-4-nmake-fast-cli">Method 4: NMake (Fast CLI)</a></li>
+        <li><a href="#method-5-legacy-batch-script-buildbat">Method 5: Legacy Batch Script (<code>build.bat</code>)</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-prerequisites--dependencies">2. Prerequisites &amp; Dependencies</a>
+      <ul>
+        <li><a href="#system-requirements">System Requirements</a></li>
+        <li><a href="#automated-workload-setup">Automated Workload Setup</a></li>
+        <li><a href="#required-tooling">Required Tooling</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-linked-libraries">3. Linked Libraries</a></li>
+    <li><a href="#4-gui-utility-toolsgui">4. GUI Utility (<code>Tools/GUI/</code>)</a></li>
+    <li><a href="#5-troubleshooting">5. Troubleshooting</a>
+      <ul>
+        <li><a href="#1-unblock-the-file-most-likely-fix">1. Unblock the file (Most likely fix)</a></li>
+        <li><a href="#2-force-the-execution-policy-in-the-current-session">2. Force the Execution Policy in the current session</a></li>
+        <li><a href="#3-verify-encoding-if-it-still-fails">3. Verify Encoding (If it still fails)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

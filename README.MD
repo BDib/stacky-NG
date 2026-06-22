@@ -6,7 +6,7 @@ Simple icon stacks solution for Windows 11
 
 StackyNG is a small, fast program for Windows that displays the contents of a directory as a list of clickable, labeled icons. It's designed to replace multiple taskbar shortcuts with a single, organized menu.
 
-it's an improved version of the now defunct 7stacks, though I used both 7Stacks and the original [Stacky](https://github.com/pawelt/stacky), This version adds many features and updated tooling for windows 11.
+it's an improved version of the now defunct 7stacks, though I used both 7Stacks and the original [Stacky v0.3.1](https://github.com/pawelt/stacky), This version adds many features and updated tooling for windows 11.
 
 ---
 

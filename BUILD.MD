@@ -1,7 +1,8 @@
 # Building StackyNG
 
 StackyNG is designed for versatility, supporting multiple build systems to accommodate various developer environments.
- [**View Readme**](README.md)
+
+[See Documentation](https://bdib.github.io/stacky-NG/docs/)
 
 ## 1. Supported Build Methods
 
@@ -27,7 +28,7 @@ This script orchestrates compilation for multiple Windows 11 target architecture
 
 * `-Config`: `Release` or `Debug`.
 
-* `-BuildTools`: Builds the Tools, see [**setup stacky**](setup_stacky.md).
+* `-BuildTools`: Builds the Tools, [See Documentation](https://bdib.github.io/stacky-NG/docs/).
 
 * `-Clean`: Wipe previous build artifacts. **Note** : -Clean removes .vs folders  in the project, ***Visual Studio*** often keeps the `.vs` folder locked until you fully close the IDE. If you get an "Access Denied" error during cleanup, it just means you have the project open in Visual Studio. Ensure your IDE is closed before running the `-Clean` command to guarantee all files (like `.suo` and `.db` database files) are successfully purged. 
 
@@ -144,7 +145,7 @@ The **Setup_Stacky** GUI is a subproject of the repository, compiled automatical
 * **Output Location**: Automatically moved to `/dist/Tools/Setup_Stacky.exe` during the main build process.
 * **Dependencies**: Requires **.NET 10.0 SDK**. If building on a fresh machine, run `winget install Microsoft.DotNet.SDK.10`.
 
-**[Setup Stacky UI Tool Documentation](SetupStacky.md)**
+**[See Documentation](https://bdib.github.io/stacky-NG/docs/)**
 
 ---
 

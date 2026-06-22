@@ -1,0 +1,29 @@
+﻿<Window x:Class="Setup_Stacky.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Setup_Stacky"
+        mc:Ignorable="d"
+        Title="StackyNG Setup Utility" Height="350" Width="500" WindowStartupLocation="CenterScreen">
+    <StackPanel Margin="20">
+        <TextBlock Text="Stack Directory:" FontWeight="Bold" Margin="0,0,0,5"/>
+        <DockPanel LastChildFill="True" Margin="0,0,0,15">
+            <Button Content="Browse" DockPanel.Dock="Right" Click="BrowseStackDir_Click" Width="70"/>
+            <TextBox x:Name="txtStackDir" Height="25"/>
+        </DockPanel>
+
+        <TextBlock Text="Stacky.exe Path:" FontWeight="Bold" Margin="0,0,0,5"/>
+        <DockPanel LastChildFill="True" Margin="0,0,0,15">
+            <Button Content="Browse" DockPanel.Dock="Right" Click="BrowseExe_Click" Width="70"/>
+            <TextBox x:Name="txtStackyExe" Height="25"/>
+        </DockPanel>
+
+        <TextBlock Text="Shortcut Name:" FontWeight="Bold" Margin="0,0,0,5"/>
+        <TextBox x:Name="txtShortcutName" Height="25" Margin="0,0,0,15"/>
+
+        <CheckBox x:Name="chkForce" Content="Force overwrite existing files" Margin="0,0,0,15"/>
+
+        <Button Content="Create Stack &amp; Shortcut" Click="btnCreate_Click" Height="40" Background="#DDDDDD"/>
+    </StackPanel>
+</Window>

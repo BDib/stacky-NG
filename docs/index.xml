@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>StackyNG Documentation</title>
-		<link>https://bdib.github.io/stacky-NG/</link>
-		<description>Recent content on StackyNG Documentation</description>
+		<title>StackyNG v0.7.0 on StackyNG Documentation</title>
+		<link>https://bdib.github.io/stacky-NG/docs/</link>
+		<description>Recent content in StackyNG v0.7.0 on StackyNG Documentation</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
 		
 		
 		
 		
-			<atom:link href="https://bdib.github.io/stacky-NG/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://bdib.github.io/stacky-NG/docs/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Features</title>
 				<link>https://bdib.github.io/stacky-NG/docs/features/</link>

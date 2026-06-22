@@ -1,14 +1,14 @@
 {
   "name": "StackyNG Documentation",
   "short_name": "StackyNG Documentation",
-  "start_url": "/stacky-NG/",
-  "scope": "/stacky-NG/",
+  "start_url": "/stacky-NG/docs/",
+  "scope": "/stacky-NG/docs/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/stacky-NG/favicon.svg",
+      "src": "/stacky-NG/docs/favicon.svg",
       "sizes": "512x512"
     }
   ]

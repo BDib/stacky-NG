@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="StackyNG v0.7.0#Simple icon stacks solution for Windows 11
+StackyNG is a small, fast program for Windows that displays the contents of a directory as a list of clickable, labeled icons. It’s designed to replace multiple taskbar shortcuts with a single, organized menu.
+View Features | View Tutorial | View Build Guide | Future Roadmap
+New in v0.7.0 (StackyNG)#Modular Refactor: Clean, maintainable codebase split into logic-specific modules. Improved Stability: Fixed menu “escaping” and UI ghosting issues. Expanded Build Support: Native support for VS2022, CMake, Ninja , NMake, and MSBuild. Structured Configuration: Enhanced stacky.json for advanced shortcut overrides. Custom Icon Overrides: Support for .png, .ico, and other formats with transparency. Dark Mode Support: Automatically follows system theme or allows manual override. Dynamic Tooltips: Hover over items to see their full path or description. Argument &amp; Admin Support: Launch shortcuts with custom command-line arguments or as Administrator. Asynchronous Scanning: UI remains responsive while the cache is being built. Memory-Mapped Cache: High-performance Win32 cache I/O. High DPI Support: Optimized icon extraction and scaling. Architecture Overview#StackyNG follows an optimized scan-cache-display cycle:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://bdib.github.io/stacky-NG/docs/docs/">
+	<meta property="og:site_name" content="StackyNG Documentation">
+	<meta property="og:title" content="StackyNG v0.7.0">
+	<meta property="og:description" content="StackyNG v0.7.0#Simple icon stacks solution for Windows 11
+StackyNG is a small, fast program for Windows that displays the contents of a directory as a list of clickable, labeled icons. It’s designed to replace multiple taskbar shortcuts with a single, organized menu.
+View Features | View Tutorial | View Build Guide | Future Roadmap
+New in v0.7.0 (StackyNG)#Modular Refactor: Clean, maintainable codebase split into logic-specific modules. Improved Stability: Fixed menu “escaping” and UI ghosting issues. Expanded Build Support: Native support for VS2022, CMake, Ninja , NMake, and MSBuild. Structured Configuration: Enhanced stacky.json for advanced shortcut overrides. Custom Icon Overrides: Support for .png, .ico, and other formats with transparency. Dark Mode Support: Automatically follows system theme or allows manual override. Dynamic Tooltips: Hover over items to see their full path or description. Argument &amp; Admin Support: Launch shortcuts with custom command-line arguments or as Administrator. Asynchronous Scanning: UI remains responsive while the cache is being built. Memory-Mapped Cache: High-performance Win32 cache I/O. High DPI Support: Optimized icon extraction and scaling. Architecture Overview#StackyNG follows an optimized scan-cache-display cycle:">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="website">
+
+
+	<meta itemprop="name" content="StackyNG v0.7.0">
+	<meta itemprop="description" content="StackyNG v0.7.0#Simple icon stacks solution for Windows 11
+StackyNG is a small, fast program for Windows that displays the contents of a directory as a list of clickable, labeled icons. It’s designed to replace multiple taskbar shortcuts with a single, organized menu.
+View Features | View Tutorial | View Build Guide | Future Roadmap
+New in v0.7.0 (StackyNG)#Modular Refactor: Clean, maintainable codebase split into logic-specific modules. Improved Stability: Fixed menu “escaping” and UI ghosting issues. Expanded Build Support: Native support for VS2022, CMake, Ninja , NMake, and MSBuild. Structured Configuration: Enhanced stacky.json for advanced shortcut overrides. Custom Icon Overrides: Support for .png, .ico, and other formats with transparency. Dark Mode Support: Automatically follows system theme or allows manual override. Dynamic Tooltips: Hover over items to see their full path or description. Argument &amp; Admin Support: Launch shortcuts with custom command-line arguments or as Administrator. Asynchronous Scanning: UI remains responsive while the cache is being built. Memory-Mapped Cache: High-performance Win32 cache I/O. High DPI Support: Optimized icon extraction and scaling. Architecture Overview#StackyNG follows an optimized scan-cache-display cycle:">
+	<meta itemprop="wordCount" content="446">
+
+<title>StackyNG v0.7.0 • StackyNG Documentation</title>
+<link rel="icon" href="/stacky-NG/docs/favicon.png" >
+<link rel="manifest" href="/stacky-NG/docs/manifest.json">
+<link rel="canonical" href="https://bdib.github.io/stacky-NG/docs/docs/">
+<link rel="stylesheet" href="/stacky-NG/docs/book.min.afb4bfd437dd0c1971175167baaa8764177a6df6e2859dfe3c098773e8aadd8d.css" integrity="sha256-r7S/1DfdDBlxF1FnuqqHZBd6bfbihZ3&#43;PAmHc&#43;iq3Y0=" crossorigin="anonymous">
+
+
+  <script defer type="module" src="/stacky-NG/docs/en.search.min.df1917004acbd0f164a80a5337c9d0dbf81d3346b132d8f3c36243beb9167579.js" integrity="sha256-3xkXAErL0PFkqApTN8nQ2/gdM0axMtjzw2JDvrkWdXk=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://bdib.github.io/stacky-NG/docs/docs/index.xml" title="StackyNG v0.7.0" />
+
+  
+</head>
+<body dir="ltr" class="book-kind-section book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/stacky-NG/docs/"><span>StackyNG Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/docs/features/" class="">
+      Features</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/docs/tutorial/" class="">
+      Tutorial</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/docs/build/" class="">
+      Build Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/docs/setupstacky/" class="">
+      Setup Stacky</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/docs/roadmap/" class="">
+      Roadmap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/docs/notice/" class="">
+      NOTICE</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/stacky-NG/docs/docs/license/" class="">
+      License</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/stacky-NG/docs/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>StackyNG v0.7.0</h3>
+
+  <label for="toc-control">
+    
+    <img src="/stacky-NG/docs/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#new-in-v070-stackyng">New in v0.7.0 (StackyNG)</a></li>
+    <li><a href="#architecture-overview">Architecture Overview</a></li>
+    <li><a href="#customization-stackyjson">Customization (<code>stacky.json</code>)</a></li>
+    <li><a href="#how-to-use-it">How to Use It</a></li>
+    <li><a href="#compilation">Compilation</a></li>
+    <li><a href="#build-requirements">Build Requirements</a></li>
+    <li><a href="#license">License</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="stackyng-v070">StackyNG v0.7.0<a class="anchor" href="#stackyng-v070">#</a></h1>
+<p>Simple icon stacks solution for Windows 11</p>
+<hr>
+<p>StackyNG is a small, fast program for Windows that displays the contents of a directory as a list of clickable, labeled icons. It&rsquo;s designed to replace multiple taskbar shortcuts with a single, organized menu.</p>
+<p><a href="features/"><strong>View Features</strong></a> | <a href="tutorial/"><strong>View Tutorial</strong></a> | <a href="build/"><strong>View Build Guide</strong></a> | <a href="roadmap/"><strong>Future Roadmap</strong></a></p>
+<hr>
+<h2 id="new-in-v070-stackyng">New in v0.7.0 (StackyNG)<a class="anchor" href="#new-in-v070-stackyng">#</a></h2>
+<ul>
+<li><strong>Modular Refactor</strong>: Clean, maintainable codebase split into logic-specific modules.</li>
+<li><strong>Improved Stability</strong>: Fixed menu &ldquo;escaping&rdquo; and UI ghosting issues.</li>
+<li><strong>Expanded Build Support</strong>: Native support for VS2022, CMake, Ninja , NMake, and MSBuild.</li>
+<li><strong>Structured Configuration</strong>: Enhanced <code>stacky.json</code> for advanced shortcut overrides.</li>
+<li><strong>Custom Icon Overrides</strong>: Support for <code>.png</code>, <code>.ico</code>, and other formats with transparency.</li>
+<li><strong>Dark Mode Support</strong>: Automatically follows system theme or allows manual override.</li>
+<li><strong>Dynamic Tooltips</strong>: Hover over items to see their full path or description.</li>
+<li><strong>Argument &amp; Admin Support</strong>: Launch shortcuts with custom command-line arguments or as Administrator.</li>
+<li><strong>Asynchronous Scanning</strong>: UI remains responsive while the cache is being built.</li>
+<li><strong>Memory-Mapped Cache</strong>: High-performance Win32 cache I/O.</li>
+<li><strong>High DPI Support</strong>: Optimized icon extraction and scaling.</li>
+</ul>
+<hr>
+<h2 id="architecture-overview">Architecture Overview<a class="anchor" href="#architecture-overview">#</a></h2>
+<p>StackyNG follows an optimized scan-cache-display cycle:</p>
+<ol>
+<li><strong>Command Line</strong>: Receives a folder path as its first argument.</li>
+<li><strong>Instance Signaling</strong>: If another instance is running, signals it to show the menu and exits.</li>
+<li><strong>Asynchronous Scan</strong>: Recursively scans the target folder for <code>.lnk</code> files on a background thread.</li>
+<li><strong>Memory-Mapped Cache</strong>:
+<ul>
+<li>Loads the icon and tree structure using memory mapping for maximum performance.</li>
+<li>Validates cache timestamp against filesystem modification times.</li>
+</ul>
+</li>
+<li><strong>Modern Icon Extraction</strong>: Uses Windows Shell <code>IImageList</code> and WIC to extract and scale icons correctly for High DPI.</li>
+<li><strong>Menu Construction</strong>: Dynamically builds a hierarchical <code>HMENU</code>.</li>
+<li><strong>Interaction</strong>: Displays the menu at the cursor position and launches the target with <code>ShellExecute</code>.</li>
+</ol>
+<hr>
+<h2 id="customization-stackyjson">Customization (<code>stacky.json</code>)<a class="anchor" href="#customization-stackyjson">#</a></h2>
+<p>StackyNG supports advanced customization via a <code>stacky.json</code> file. You can override names, icons, and launch arguments for individual items.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;MyGame&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Play Modern Warfare&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;icon&#34;</span>: <span style="color:#e6db74">&#34;icons/mw.png&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;args&#34;</span>: <span style="color:#e6db74">&#34;--developer-mode&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;admin&#34;</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>See <a href="tutorial/"><strong>Tutorial</strong></a> for full configuration details.
+For a setup tool see <a href="setupstacky/"><strong>setup stacky</strong></a></p>
+<hr>
+<h2 id="how-to-use-it">How to Use It<a class="anchor" href="#how-to-use-it">#</a></h2>
+<ol>
+<li>
+<p><strong>Create a Folder</strong>: Place shortcuts to your programs inside it. Subdirectories can be used for organization.</p>
+</li>
+<li>
+<p><strong>Create a Shortcut</strong>: Make a Windows shortcut to <code>stacky.exe</code>.</p>
+</li>
+<li>
+<p><strong>Set the Target</strong>: Edit the shortcut’s target to include your folder path:</p>
+<pre tabindex="0"><code class="language-dos" data-lang="dos">&#34;C:\Path\To\stacky.exe&#34; &#34;C:\Path\To\Your\StackFolder&#34;</code></pre></li>
+<li>
+<p><strong>Pin to Taskbar</strong>: Drag the shortcut to the taskbar.</p>
+</li>
+</ol>
+<hr>
+<h2 id="compilation">Compilation<a class="anchor" href="#compilation">#</a></h2>
+<p>See <a href="build/">BUILD.MD</a> for detailed build instructions using CMake, Visual Studio, or the command line.</p>
+<hr>
+<h2 id="build-requirements">Build Requirements<a class="anchor" href="#build-requirements">#</a></h2>
+<ul>
+<li><strong>Compiler</strong>: C++17 compatible (Visual Studio 2022 or later).</li>
+<li><strong>Architectures</strong>: x64, x86, ARM64.</li>
+<li><strong>SDKs</strong>: Windows SDK (Win32 + WIC + Common Controls APIs).</li>
+<li><strong>Libraries</strong>: <code>user32</code>, <code>gdi32</code>, <code>shell32</code>, <code>ole32</code>, <code>comctl32</code>, <code>windowscodecs</code>.</li>
+</ul>
+<hr>
+<h2 id="license">License<a class="anchor" href="#license">#</a></h2>
+<p>StackyNG is open source and released under the <a href="license/"><strong>Apache License 2.0</strong></a>.
+Original project by Pawel Turlejski. Modernized and maintained by B Dib.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+    </span>
+    <span>
+    
+      <a href="/stacky-NG/docs/docs/features/" class="flex align-center">
+        <span>Features</span>
+        <img src="/stacky-NG/docs/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#new-in-v070-stackyng">New in v0.7.0 (StackyNG)</a></li>
+    <li><a href="#architecture-overview">Architecture Overview</a></li>
+    <li><a href="#customization-stackyjson">Customization (<code>stacky.json</code>)</a></li>
+    <li><a href="#how-to-use-it">How to Use It</a></li>
+    <li><a href="#compilation">Compilation</a></li>
+    <li><a href="#build-requirements">Build Requirements</a></li>
+    <li><a href="#license">License</a></li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

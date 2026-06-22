@@ -2,26 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://bdib.github.io/stacky-NG/docs/docs/</loc>
-  </url><url>
-    <loc>https://bdib.github.io/stacky-NG/docs/docs/features/</loc>
-  </url><url>
-    <loc>https://bdib.github.io/stacky-NG/docs/docs/tutorial/</loc>
-  </url><url>
-    <loc>https://bdib.github.io/stacky-NG/docs/docs/build/</loc>
-  </url><url>
-    <loc>https://bdib.github.io/stacky-NG/docs/docs/setupstacky/</loc>
-  </url><url>
-    <loc>https://bdib.github.io/stacky-NG/docs/docs/roadmap/</loc>
-  </url><url>
-    <loc>https://bdib.github.io/stacky-NG/docs/docs/notice/</loc>
-  </url><url>
-    <loc>https://bdib.github.io/stacky-NG/docs/docs/license/</loc>
-  </url><url>
-    <loc>https://bdib.github.io/stacky-NG/docs/categories/</loc>
-  </url><url>
     <loc>https://bdib.github.io/stacky-NG/docs/</loc>
   </url><url>
-    <loc>https://bdib.github.io/stacky-NG/docs/tags/</loc>
+    <loc>https://bdib.github.io/stacky-NG/docs/features/</loc>
+  </url><url>
+    <loc>https://bdib.github.io/stacky-NG/docs/tutorial/</loc>
+  </url><url>
+    <loc>https://bdib.github.io/stacky-NG/docs/build/</loc>
+  </url><url>
+    <loc>https://bdib.github.io/stacky-NG/docs/setupstacky/</loc>
+  </url><url>
+    <loc>https://bdib.github.io/stacky-NG/docs/roadmap/</loc>
+  </url><url>
+    <loc>https://bdib.github.io/stacky-NG/docs/notice/</loc>
+  </url><url>
+    <loc>https://bdib.github.io/stacky-NG/docs/license/</loc>
+  </url><url>
+    <loc>https://bdib.github.io/stacky-NG/categories/</loc>
+  </url><url>
+    <loc>https://bdib.github.io/stacky-NG/</loc>
+  </url><url>
+    <loc>https://bdib.github.io/stacky-NG/tags/</loc>
   </url>
 </urlset>

@@ -41,7 +41,7 @@ Build all targets: .\build.ps1
 Build specific targets: .\build.ps1 -Arch x64 -Config Release
 Clean &amp; Rebuild: .\build.ps1 -Clean
 Get Help: .\build.ps1 -h OR -Help">
-	<meta itemprop="wordCount" content="827">
+	<meta itemprop="wordCount" content="824">
 
 <title>Build Guide • StackyNG Documentation</title>
 <link rel="icon" href="/stacky-NG/favicon.png" >
@@ -50,7 +50,7 @@ Get Help: .\build.ps1 -h OR -Help">
 <link rel="stylesheet" href="/stacky-NG/book.min.afb4bfd437dd0c1971175167baaa8764177a6df6e2859dfe3c098773e8aadd8d.css" integrity="sha256-r7S/1DfdDBlxF1FnuqqHZBd6bfbihZ3&#43;PAmHc&#43;iq3Y0=" crossorigin="anonymous">
 
 
-  <script defer type="module" src="/stacky-NG/en.search.min.f1e4c3fc256bb63ed9795b89b3ec378f85acfaaedb888da9f5a9522247138f23.js" integrity="sha256-8eTD/CVrtj7ZeVuJs&#43;w3j4Ws&#43;q7biI2p9alSIkcTjyM=" crossorigin="anonymous"></script>
+  <script defer type="module" src="/stacky-NG/en.search.min.449a9cf02e0d4da60f2ac41f891f883694455d0a90f63c21c40272d99f739fb4.js" integrity="sha256-RJqc8C4NTaYPKsQfiR&#43;INpRFXQqQ9jwhxAJy2Z9zn7Q=" crossorigin="anonymous"></script>
 
   
 </head>
@@ -422,13 +422,12 @@ To wipe all generated objects and binaries across all architectures:
 </ul>
 <hr>
 <h2 id="4-gui-utility-toolsgui">4. GUI Utility (<code>Tools/GUI/</code>)<a class="anchor" href="#4-gui-utility-toolsgui">#</a></h2>
-<p>The <strong>Setup_Stacky</strong> GUI is a subproject of the repository, compiled automatically as part of the <code>build.ps1</code> workflow.</p>
+<p>The <strong><a href="../setupstacky/">Setup Stacky UI Tool</a></strong> is a subproject of the repository, compiled automatically as part of the <code>build.ps1</code> workflow.</p>
 <ul>
 <li><strong>Manual Build</strong>: Navigate to <code>Tools/GUI/</code> and run: <code>dotnet build -c Debug</code>.</li>
 <li><strong>Output Location</strong>: Automatically moved to <code>/dist/Tools/Setup_Stacky.exe</code> during the main build process.</li>
 <li><strong>Dependencies</strong>: Requires <strong>.NET 10.0 SDK</strong>. If building on a fresh machine, run <code>winget install Microsoft.DotNet.SDK.10</code>.</li>
 </ul>
-<p><strong><a href="../setupstacky/">Setup Stacky UI Tool Documentation</a></strong></p>
 <hr>
 <h2 id="5-troubleshooting">5. Troubleshooting<a class="anchor" href="#5-troubleshooting">#</a></h2>
 <ul>

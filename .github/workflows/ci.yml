@@ -1,0 +1,31 @@
+name: Continuous Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        arch: [x64, x86, arm64]
+        config: [Debug, Release]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build with Build.ps1
+        shell: powershell
+        run: |
+          # Use your script to build the specific arch/config matrix
+          .\Build.ps1 -Arch ${{ matrix.arch }} -Config ${{ matrix.config }} -Method CMake
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: stacky-${{ matrix.arch }}-${{ matrix.config }}
+          path: dist/CMake/${{ matrix.arch }}/${{ matrix.config }}/

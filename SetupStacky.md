@@ -2,8 +2,9 @@
 
 ## 1. Overview
 
-**Setup_Stacky** is a WPF-based GUI utility designed to streamline the management of **StackyNG** workspaces [**View Readme**](README.md)
-. It replaces manual command-line configuration with an intuitive Windows interface, ensuring workspaces are structured consistently and launching them is as simple as clicking an icon.
+**Setup_Stacky** is a WPF-based GUI utility designed to streamline the management of **StackyNG** workspaces . It replaces manual command-line configuration with an intuitive Windows interface, ensuring workspaces are structured consistently and launching them is as simple as clicking an icon.
+
+[See Documentation](https://bdib.github.io/stacky-NG/docs/)
 
 ### Key Features
 
@@ -17,21 +18,21 @@ The application gathers user input through its WPF front-end and executes the fo
 
 1. **Validation**: Verifies that the target workspace directory exists (or creates it) and confirms the provided `stacky.exe` path is valid.
 2. **JSON Generation**: Creates a base `stacky.json` file inside your workspace. The "Force" option ensures existing configurations are updated to the current schema to prevent corruption.
-3. **COM Integration**: Utilizes the `WScript.Shell` COM object‚Äîthe same robust engine used by professional installers‚Äîto create fully compliant Windows shortcuts.
+3. **COM Integration**: Utilizes the `WScript.Shell` COM object√¢‚Ç¨‚Äùthe same robust engine used by professional installers√¢‚Ç¨‚Äùto create fully compliant Windows shortcuts.
 4. **Parameter Mapping**: Sets the shortcut `TargetPath` to `stacky.exe` and maps the `Arguments` property to your selected folder path, ensuring correct workspace initialization on launch.
 
 ---
 
 ## 3. Build & Setup Guide
 
-### ?èó Prerequisites
+### Prerequisites
 
 * **OS**: Windows 11.
 * **SDK**: .NET 10.0 SDK.
 * **Compiler**: Visual Studio 2026 (or 2022) with the "Desktop development with C++" and ".NET desktop development" workloads.
 * **Dependencies**: Windows Script Host Object Model (COM).
 
-### ?õ† Automated Environment Setup
+###  Automated Environment Setup
 
 If setting up a fresh build machine, use one of the following methods:
 
@@ -54,7 +55,7 @@ winget install Microsoft.DotNet.SDK.10
 winget install Microsoft.VisualStudio.2022.BuildTools --override "--passive --add Microsoft.VisualStudio.Workload.ManagedDesktopBuildTools"
 ```
 
-### ?íª Build Instructions
+###  Build Instructions
 
 #### From Visual Studio IDE
 

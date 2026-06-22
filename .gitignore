@@ -5,7 +5,7 @@
 *.suo
 
 # Build Artifacts
-build/
+build_artifacts/
 docs-site/
 public/
 docs/

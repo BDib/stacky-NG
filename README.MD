@@ -6,7 +6,12 @@ Simple icon stacks solution for Windows 11
 
 StackyNG is a small, fast program for Windows that displays the contents of a directory as a list of clickable, labeled icons. It's designed to replace multiple taskbar shortcuts with a single, organized menu.
 
-[**View Features**](FEATURES.md) | [**View Tutorial**](Tutorial.md) | [**View Build Guide**](BUILD.MD) | [**Future Roadmap**](Roadmap.md)
+---
+
+## Documentation
+You can find our full documentation, including roadmaps and guides, at the link below:
+
+[https://bdib.github.io/stacky-NG/docs/](https://bdib.github.io/stacky-NG/docs/)
 
 ---
 
@@ -57,9 +62,6 @@ Example:
 }
 ```
 
-See [**Tutorial**](Tutorial.md) for full configuration details.
-For a setup tool see [**setup stacky**](setup_stacky.md)
-
 ---
 
 ## How to Use It
@@ -80,7 +82,7 @@ For a setup tool see [**setup stacky**](setup_stacky.md)
 
 ## Compilation
 
-See [BUILD.MD](BUILD.MD) for detailed build instructions using CMake, Visual Studio, or the command line.
+See [Build](https://bdib.github.io/stacky-NG/docs/build/) for detailed build instructions using CMake, Visual Studio, or the command line.
 
 ---
 

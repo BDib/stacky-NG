@@ -1,7 +1,7 @@
 # StackyNG Future Roadmap
 
 This roadmap outlines planned features and potential improvements for future versions of StackyNG.
- [**View Readme**](README.md)
+[See Documentation](https://bdib.github.io/stacky-NG/docs/)
 
 ---
 

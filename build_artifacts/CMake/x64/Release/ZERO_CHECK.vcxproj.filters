@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\Projects\Latest\stacky-NG\build_artifacts\CMake\x64\Release\CMakeFiles\a69c9f5da0cb66ee198ea7e0d44e6785\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{16664DF1-E1F5-3CF3-8EA1-52BB97F2CBB6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

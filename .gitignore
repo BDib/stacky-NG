@@ -11,9 +11,7 @@ public/
 docs/
 bin/
 obj/
-dist/
-NOTICE.md
-LICENSE.md
-mkdocs.yml
+dist/Cmake/logs/
+dist/Ninja/logs/
 *.cache
 *.log

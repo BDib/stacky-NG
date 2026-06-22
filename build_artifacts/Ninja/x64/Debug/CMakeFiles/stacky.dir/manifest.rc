@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "E:/Projects/Latest/stacky-NG/build_artifacts/Ninja/x64/Debug/CMakeFiles/stacky.dir/embed.manifest"

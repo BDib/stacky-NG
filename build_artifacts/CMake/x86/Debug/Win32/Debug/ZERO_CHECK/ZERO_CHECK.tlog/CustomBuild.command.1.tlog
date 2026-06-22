@@ -1,0 +1,10 @@
+^E:\PROJECTS\LATEST\STACKY-NG\BUILD_ARTIFACTS\CMAKE\X86\DEBUG\CMAKEFILES\415BDD31DB5C25A2B4A21FE771373E7C\GENERATE.STAMP.RULE
+setlocal
+C:\Strawberry\c\bin\cmake.exe -SE:/Projects/Latest/stacky-NG -BE:/Projects/Latest/stacky-NG/build_artifacts/CMake/x86/Debug --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file E:/Projects/Latest/stacky-NG/build_artifacts/CMake/x86/Debug/StackyNG.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

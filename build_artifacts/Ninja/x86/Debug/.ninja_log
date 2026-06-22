@@ -1,0 +1,10 @@
+# ninja log v6
+57	3608	8038718628206323	CMakeFiles/stacky.dir/src/util.cpp.obj	eeffe2d861b6aa27
+45	3642	8038718628090981	CMakeFiles/stacky.dir/src/bmp.cpp.obj	609c5b78fbdc6f71
+29	3701	8038718627930541	CMakeFiles/stacky.dir/src/stacky.cpp.obj	8d79502868206a6a
+36	3838	8038718628000797	CMakeFiles/stacky.dir/src/app.cpp.obj	66ceb9f630feec3c
+50	3914	8038718628141061	CMakeFiles/stacky.dir/src/config.cpp.obj	cdaa6ac9b072f2e4
+41	3952	8038718628040794	CMakeFiles/stacky.dir/src/cache_manager.cpp.obj	948ff78d75929624
+3643	3968	8038718664057176	CMakeFiles/stacky.dir/src/stacky.rc.res	c8d8d2176525b92e
+3609	5035	8038718663726132	CMakeFiles/stacky.dir/src/logger.cpp.obj	27c997e15df08a3e
+5036	5962	8038718677998170	stacky.exe	d0445a9340f894a

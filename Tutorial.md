@@ -1,7 +1,8 @@
 # StackyNG Tutorial
 
 This tutorial provides a comprehensive guide on how to get the most out of **StackyNG**, the modern icon stack solution for the Windows taskbar.
- [**View Readme**](README.md)
+
+ [See Documentation](https://bdib.github.io/stacky-NG/docs/)
 
 ---
 

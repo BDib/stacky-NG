@@ -10,6 +10,18 @@ it's an improved version of the now defunct 7stacks, though I used both 7Stacks 
 
 ---
 
+## From v0.4
+
+- **Hierarchical Menus**: Recursively scans subdirectories and displays them as submenus.  
+- **Smart Filtering**: Only directories containing Windows shortcuts (`.lnk` files) are displayed.  
+- **Modern C++**: Refactored to use C++17 standards (`std::filesystem`, RAII, etc.).  
+- **Command-Line Build**: Added support for compiling using Visual Studio Build Tools without the IDE.  
+- **Real-time Monitoring**: Automatically detects changes in the target folder while the menu is active.
+- **Centralized Logging**: Diagnostic information saved to `!stacky.log
+- **CMake Build System**: Added support for cross-architecture builds (x86, x64, ARM64).
+
+---
+
 ## Documentation
 You can find our full documentation, including roadmaps and guides, at the link below:
 
@@ -21,7 +33,7 @@ You can find our full documentation, including roadmaps and guides, at the link 
 
 - **Modular Refactor**: Clean, maintainable codebase split into logic-specific modules.
 - **Improved Stability**: Fixed menu "escaping" and UI ghosting issues.
-- **Expanded Build Support**: Native support for VS2022, CMake, Ninja , NMake, and MSBuild.
+- **Expanded Build Support**: Native support for VS2022+, CMake, Ninja , NMake, and MSBuild.
 - **Structured Configuration**: Enhanced `stacky.json` for advanced shortcut overrides.
 - **Custom Icon Overrides**: Support for `.png`, `.ico`, and other formats with transparency.
 - **Dark Mode Support**: Automatically follows system theme or allows manual override.

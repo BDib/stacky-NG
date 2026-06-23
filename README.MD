@@ -1,4 +1,4 @@
-# StackyNG v0.7.0.1
+# StackyNG v0.7.0.2
 
 Simple icon stacks solution for Windows 11
 
@@ -17,7 +17,7 @@ You can find our full documentation, including roadmaps and guides, at the link 
 
 ---
 
-## New in v0.7.0.1 (StackyNG)
+## New in v0.7.0.2 (StackyNG)
 
 - **Modular Refactor**: Clean, maintainable codebase split into logic-specific modules.
 - **Improved Stability**: Fixed menu "escaping" and UI ghosting issues.

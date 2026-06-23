@@ -11,6 +11,7 @@ public/
 docs/
 bin/
 obj/
+dist/
 dist/Cmake/logs/
 dist/Ninja/logs/
 *.cache

@@ -57,3 +57,39 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: artifacts/**/*
+          
+  build-gui:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        rid: [win-x64, win-x86, win-arm64]
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Build and Zip GUI Tool
+        shell: powershell
+        run: |
+          $TargetDir = "dist/Tools/Setup_Stacky/${{ matrix.rid }}"
+          
+          # 1. Publish (Matches BuildTools.ps1 logic)
+          dotnet publish Tools/GUI/Setup_Stacky/Setup_Stacky.csproj -c Release -r ${{ matrix.rid }} --self-contained true -p:PublishSingleFile=true -p:PublishReadyToRun=false -o $TargetDir
+          
+          # 2. Compress (Creates the zip archive)
+          $ZipPath = "Setup_Stacky-${{ matrix.rid }}.zip"
+          Compress-Archive -Path "$TargetDir/*" -DestinationPath $ZipPath -Force
+          
+          # Set an output for the next step to find the zip
+          echo "ZIP_PATH=$ZipPath" >> $env:GITHUB_ENV
+
+      - name: Upload GUI Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: gui-tool-${{ matrix.rid }}
+          path: ${{ env.ZIP_PATH }}
+          

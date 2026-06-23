@@ -1,4 +1,4 @@
-name: Continuous Build
+name: GitHub CI Build
 
 on:
   push:
@@ -12,24 +12,26 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        arch: [x64, x86, arm64]
+        # Define your 6 configurations here
+        arch: [x64, Win32, ARM64]
         config: [Debug, Release]
     
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v4
-        
+
       - name: Setup MSVC
         uses: microsoft/setup-msbuild@v2
 
-      - name: Build with Build.ps1
-        shell: powershell
-        run: |
-          # Use your script to build the specific arch/config matrix
-          .\Build.ps1 -Arch ${{ matrix.arch }} -Config ${{ matrix.config }} -Method CMake
+      - name: Configure CMake
+        # -A sets the architecture (Win32 is the generator name for x86)
+        run: cmake -B build -S . -A ${{ matrix.arch }} -DCMAKE_BUILD_TYPE=${{ matrix.config }}
+
+      - name: Build
+        run: cmake --build build --config ${{ matrix.config }}
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: stacky-${{ matrix.arch }}-${{ matrix.config }}
-          path: dist/CMake/${{ matrix.arch }}/${{ matrix.config }}/
+          path: build/${{ matrix.config }}/stacky.exe

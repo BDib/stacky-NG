@@ -41,23 +41,6 @@ jobs:
           name: stacky-${{ matrix.arch }}-${{ matrix.config }}
           path: stacky-${{ matrix.arch }}-${{ matrix.config }}.exe
           
-  release:
-    needs: build
-    runs-on: windows-latest
-    if: startsWith(github.ref, 'refs/tags/v')
-    permissions:
-      contents: write
-    steps:
-      - name: Download all artifacts
-        uses: actions/download-artifact@v4
-        with:
-          path: artifacts
-
-      - name: Create Release
-        uses: softprops/action-gh-release@v2
-        with:
-          files: artifacts/**/*
-          
   build-gui:
     runs-on: windows-latest
     strategy:
@@ -92,4 +75,21 @@ jobs:
         with:
           name: gui-tool-${{ matrix.rid }}
           path: ${{ env.ZIP_PATH }}
-          
+      
+  release:
+    needs: [build, build-gui]
+    runs-on: windows-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+    permissions:
+      contents: write
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true 
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: artifacts/**/*

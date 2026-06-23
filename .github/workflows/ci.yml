@@ -35,3 +35,18 @@ jobs:
         with:
           name: stacky-${{ matrix.arch }}-${{ matrix.config }}
           path: build/${{ matrix.config }}/stacky.exe
+
+release:
+    needs: build
+    runs-on: windows-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: artifacts/**/*

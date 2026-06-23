@@ -23,7 +23,6 @@ jobs:
         uses: microsoft/setup-msbuild@v2
 
       - name: Configure CMake
-        # -A sets the architecture (Win32 is the generator name for x86)
         run: cmake -B build -S . -A ${{ matrix.arch }} -DCMAKE_BUILD_TYPE=${{ matrix.config }}
 
       - name: Build

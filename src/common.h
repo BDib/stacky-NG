@@ -55,7 +55,7 @@ typedef std::wstring            String;
 inline const String CACHE_FILE_NAME    = L"!stacky.cache";
 inline const String STACKY_EXEC_NAME   = L"stacky.exe";
 inline const Char*  STACKY_WINDOW_NAME = L"stackyNG";
-inline const String STACKY_VERSION     = L"0.7.0";
+inline const String STACKY_VERSION     = L"0.7.0.1";
 
 enum {
     WM_BASE                     = WM_USER + 100,

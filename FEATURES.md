@@ -1,4 +1,4 @@
-# StackyNG v0.7.0 - Feature Overview & System Description
+# StackyNG v0.7.0.1 - Feature Overview & System Description
 
 **StackyNG** is a modernized, high-performance Win32 utility designed to declutter the Windows taskbar by grouping shortcuts into organized, hierarchical menus ("stacks"). It serves as a successor to the original Stacky project, rewritten for speed, stability, and compatibility with modern Windows 10/11 environments.
 [See Documentation](https://bdib.github.io/stacky-NG/docs/)
@@ -38,7 +38,7 @@ Every stack folder can contain a `stacky.json` file to override default behavior
 
 ---
 
-## 🛠 Project Structure (Modular v0.7.0)
+## 🛠 Project Structure (Modular v0.7.0.1)
 
 The code has been fully refactored into modular components for easier maintenance:
 

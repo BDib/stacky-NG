@@ -18,6 +18,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        
+      - name: Setup MSVC
+        uses: microsoft/setup-msbuild@v2
 
       - name: Build with Build.ps1
         shell: powershell

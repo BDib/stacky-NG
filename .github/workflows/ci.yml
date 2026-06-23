@@ -12,7 +12,6 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        # Define your 6 configurations here
         arch: [x64, Win32, ARM64]
         config: [Debug, Release]
     

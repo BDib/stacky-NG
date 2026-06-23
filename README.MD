@@ -1,6 +1,6 @@
 # StackyNG v0.7.0.5
 
-Simple icon stacks solution for Windows 11
+A Simple icon stacks solution for Windows 11
 
 ---
 

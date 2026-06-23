@@ -3,7 +3,7 @@ name: GitHub CI Build
 on:
   push:
     branches: [ main ]
-    tags: [ 'v*' ]  # Ensure the workflow triggers on tags
+    tags: [ 'v*' ] 
   workflow_dispatch:
   pull_request:
     branches: [ main ]
@@ -29,12 +29,18 @@ jobs:
       - name: Build
         run: cmake --build build --config ${{ matrix.config }}
 
-      - name: Upload Artifacts
+      - name: Rename and Upload Artifacts
+        shell: powershell
+        run: |
+          $finalName = "stacky-${{ matrix.arch }}-${{ matrix.config }}.exe"
+          Move-Item -Path "build/${{ matrix.config }}/stacky.exe" -Destination $finalName
+          
+      - name: Upload
         uses: actions/upload-artifact@v4
         with:
           name: stacky-${{ matrix.arch }}-${{ matrix.config }}
-          path: build/${{ matrix.config }}/stacky.exe
-
+          path: stacky-${{ matrix.arch }}-${{ matrix.config }}.exe
+          
   release:
     needs: build
     runs-on: windows-latest

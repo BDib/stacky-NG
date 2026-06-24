@@ -1,8 +1,9 @@
-# Help System Documentation (`genHelp.py`)
+# Help System (`genHelp.py`) (`genHelp.ps1`)
 
 ## Overview
 
-`genHelp.py` is the orchestration engine used to compile your Markdown documentation into a **Windows Help (`.chm`)** file. It handles Markdown-to-HTML conversion, TOC generation, internal link resolution, and final compilation.
+`genHelp.py` and the powershell version are the orchestration engine used to compile your Markdown documentation into a **Windows Help (`.chm`)** file. It handles Markdown-to-HTML conversion, TOC generation, internal link resolution, and final compilation.
+the powershell version removes the python dependancy.
 
 ## ⚠️ Important Entry Point Requirement
 
@@ -14,17 +15,11 @@ To compile the help system, the following tools must be installed and available 
 
 1. **Pandoc**: Used to convert Markdown to HTML.
 * *Install*: `winget install pandoc.pandoc` or `choco install pandoc`
-
-
 2. **HTML Help Workshop**: The official Microsoft tool to compile CHM files.
 * *Download*: [Microsoft HTML Help Workshop](https://www.google.com/search?q=https://learn.microsoft.com/en-us/previous-versions/windows/desktop/aa962534(v%3Dvs.85))
 * Ensure `hhc.exe` is installed, typically in `C:\Program Files (x86)\HTML Help Workshop\`.
-
-
 3. **Python 3.x**: With `BeautifulSoup4` installed.
 * *Install*: `pip install beautifulsoup4`
-
-
 
 ## Usage
 
@@ -33,6 +28,9 @@ Run the script from the command line, pointing it to the directory containing yo
 ```bash
 python genHelp.py <path_to_markdown_directory>
 
+or
+
+./genHelp.ps1 <path_to_markdown_directory>
 ```
 
 ### Options

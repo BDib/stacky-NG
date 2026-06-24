@@ -102,11 +102,11 @@ The easiest way to build the project without opening the IDE is via the `dotnet`
 
 1. **Build**: `dotnet build -c Release`
 2. **Publish (Standalone)**:
+
 ```powershell
 dotnet publish -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true
 
 ```
-
 
 *The resulting executable will be found in: `bin\Release\net10.0-windows\win-x64\publish\*`
 

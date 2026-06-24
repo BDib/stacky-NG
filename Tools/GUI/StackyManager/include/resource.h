@@ -1,0 +1,11 @@
+#pragma once
+
+#define IDI_APP_ICON    101
+#define IDD_EDIT_SHORTCUT 2000
+#define IDC_EDIT_TARGET   1001
+#define IDC_EDIT_ARGS     1002
+#define IDC_EDIT_NAME     1003
+#define IDC_BTN_BROWSE_EXE 1004
+#define IDC_BTN_BROWSE_DIR 1005
+#define IDD_ABOUT         2001
+#define IDD_CONFIRM_DELETE 2002

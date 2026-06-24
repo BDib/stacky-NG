@@ -122,7 +122,7 @@ jobs:
   release:
     needs: [build, build-gui, build-stacky-manager]
     runs-on: windows-latest
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/tags/master'
     permissions:
       contents: write
     steps:
@@ -135,4 +135,5 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
+          prerelease: ${{ github.ref == 'refs/tags/master' }}
           files: artifacts/**/*

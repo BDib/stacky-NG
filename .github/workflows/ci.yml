@@ -98,7 +98,7 @@ jobs:
         shell: powershell
         run: |
           cd Tools\GUI\StackyManager
-          .\Build.ps1 -Arch ${{ matrix.arch }} -Config ${{ matrix.config }}
+          .\CIBuild.ps1 -Arch ${{ matrix.arch }} -Config ${{ matrix.config }}
 
       - name: Zip Artifacts
         shell: powershell

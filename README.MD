@@ -92,6 +92,8 @@ Example:
 
 4. **Pin to Taskbar**: Drag the shortcut to the taskbar.  
 
+look in [Tools](https://github.com/BDib/stacky-NG/tree/master/Tools) for some helper tools, Binaries provided in [Latest Releass](https://github.com/BDib/stacky-NG/releases).
+
 ---
 
 ## Compilation

@@ -87,6 +87,9 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+        
+      - name: Setup MSVC
+        uses: microsoft/setup-msbuild@v2
 
       - name: Build StackyManager
         shell: powershell

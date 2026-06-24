@@ -20,8 +20,10 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup MSVC
-        uses: microsoft/setup-msbuild@v2
+      - name: Setup MSVC Environment
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: ${{ matrix.arch }}
 
       - name: Configure CMake
         run: cmake -B build -S . -A ${{ matrix.arch }} -DCMAKE_BUILD_TYPE=${{ matrix.config }}

@@ -82,6 +82,7 @@ jobs:
       matrix:
         # Build all architectures defined in your script
         arch: [x64, Win32, ARM64]
+        config: [Debug, Release]
     
     steps:
       - name: Checkout Code
@@ -91,16 +92,15 @@ jobs:
         shell: powershell
         run: |
           # Navigate to the directory where your Build.ps1 lives
-          cd StackyManager
-          # Run the script for the specific matrix architecture in Release mode
-          .\Build.ps1 -Arch ${{ matrix.arch }} -Config Release
+          cd Tools\GUI\StackyManager
+          .\Build.ps1 -Arch ${{ matrix.arch }} -Config ${{ matrix.config }}
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: stacky-manager-${{ matrix.arch }}
+          name: stacky-manager-${{ matrix.arch }}-${{ matrix.config }}
           # The script saves files to /StackyManager/Bin/${{ matrix.arch }}
-          path: StackyManager/Bin/${{ matrix.arch }}/*
+          path: StackyManager/Bin/${{ matrix.arch }}/${{ matrix.config }}/*
 
   release:
     needs: [build, build-gui, build-stacky-manager]

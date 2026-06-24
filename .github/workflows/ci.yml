@@ -80,7 +80,6 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        # Build all architectures defined in your script
         arch: [x64, Win32, ARM64]
         config: [Debug, Release]
     
@@ -88,22 +87,35 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
         
-      - name: Setup MSVC
-        uses: microsoft/setup-msbuild@v2
+      - name: Setup MSVC Environment
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: ${{ matrix.arch }}
 
       - name: Build StackyManager
         shell: powershell
         run: |
-          # Navigate to the directory where your Build.ps1 lives
           cd Tools\GUI\StackyManager
           .\Build.ps1 -Arch ${{ matrix.arch }} -Config ${{ matrix.config }}
 
-      - name: Upload Artifact
+      - name: Zip Artifacts
+        shell: powershell
+        run: |
+          # Define the folder created by your script
+          $SourceDir = "Tools/GUI/StackyManager/Bin/${{ matrix.arch }}"
+          $ZipName = "StackyManager-${{ matrix.arch }}-${{ matrix.config }}.zip"
+          
+          # Zip the entire Bin architecture folder
+          Compress-Archive -Path "$SourceDir/*" -DestinationPath $ZipName -Force
+          
+          # Set as env var for the next step
+          echo "ZIP_PATH=$ZipName" >> $env:GITHUB_ENV
+
+      - name: Upload Zip Artifact
         uses: actions/upload-artifact@v4
         with:
           name: stacky-manager-${{ matrix.arch }}-${{ matrix.config }}
-          # The script saves files to /StackyManager/Bin/${{ matrix.arch }}
-          path: StackyManager/Bin/${{ matrix.arch }}/${{ matrix.config }}/*
+          path: ${{ env.ZIP_PATH }}
 
   release:
     needs: [build, build-gui, build-stacky-manager]

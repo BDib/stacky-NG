@@ -43,7 +43,7 @@ foreach ($arch in $architectures) {
     $buildDir = "build/$arch"
     Write-Host "--- Configuring for $arch ---" -ForegroundColor Cyan
 	
-    cmake -S . -B $buildDir -G "Visual Studio 17 2022" -A $arch   
+    cmake -S . -B $buildDir -A $arch   
     
     foreach ($cfg in $configs) {
         Write-Host "--- Building $arch $cfg ---" -ForegroundColor Yellow

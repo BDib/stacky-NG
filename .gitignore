@@ -17,5 +17,3 @@ dist/Ninja/logs/
 *.cache
 *.log
 
-#CI Specific
-Tools/GUI/StackyManager/CIBuild.ps1
